@@ -1,13 +1,13 @@
 import argparse
 def main():
-    # parser = argparse.ArgumentParser(description='The seqAnn application')
-    # parser.add_argument('-i', action="store", dest="vcf", help="The input vcf file")
-    # parser.add_argument('-a', action="store", dest="adam", help="The inpu adam file")
-    # options = parser.parse_args()
-    # vcf = open(options.vcf, 'r')
-    # adam = open(options.adam, 'r')
-    vcf = open("/Users/wwang/Desktop/samples/vcfOut.csv", 'r')
-    adam = open("/Users/wwang/Desktop/samples/adamOut.csv", 'r')
+    parser = argparse.ArgumentParser(description='Application for adam validation')
+    parser.add_argument('-i', action="store", dest="vcf", help="The input vcf file")
+    parser.add_argument('-a', action="store", dest="adam", help="The inpu adam file")
+    options = parser.parse_args()
+    vcf = open(options.vcf, 'r')
+    adam = open(options.adam, 'r')
+    # vcf = open("/Users/wwang/Desktop/samples/vcfOut.csv", 'r')
+    # adam = open("/Users/wwang/Desktop/samples/adamOut.csv", 'r')
     rawline = "-1"
     while(rawline):
         rawline = vcf.readline()
@@ -53,7 +53,7 @@ def main():
         adam.close()
         return False
     else:
-        print("True\n")
+        print("\n Pass Validation: The ADAM file contains identical variants of the original VCF. \n")
         vcf.close()
         adam.close()
         return True
