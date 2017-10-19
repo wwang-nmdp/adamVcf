@@ -1,1 +1,3 @@
 This is an application for validating the adam format by comparing with the original vcf file.
+
+Command line example: python adamVcf.py -i /path/to/original_vcf.csv -a /path/to/converted_adam.csv
